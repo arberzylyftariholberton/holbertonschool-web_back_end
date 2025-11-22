@@ -11,12 +11,11 @@ def print_nginx_statistics(collection):
 
     total = collection.count_documents({})
     print(f"{total} logs")
-    print("Methods:")
+    print("Methods: ")
 
     methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     for method in methods:
         count = collection.count_documents({"method": method})
-        # EXACTLY four spaces before 'method'
         print(f"    method {method}: {count}")
 
     status_count = collection.count_documents({"method": "GET", "path": "/status"})
