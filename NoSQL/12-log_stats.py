@@ -16,7 +16,7 @@ def summarize_nginx_logs(nginx_coll):
     methods_to_check = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     for m in methods_to_check:
         num_requests = nginx_coll.count_documents({"method": m})
-        print(f"\tmethod {m}: {num_requests}")
+        print(f"    method {m}: {num_requests}")
 
     status_hits = nginx_coll.count_documents({"method": "GET", "path": "/status"})
     print(f"{status_hits} status check")
