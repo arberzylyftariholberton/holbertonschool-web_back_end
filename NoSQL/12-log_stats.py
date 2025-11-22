@@ -5,6 +5,10 @@ from pymongo import MongoClient
 
 
 if __name__ == "__main__":
+    """
+    Documentation
+    """
+
     client = MongoClient('mongodb://127.0.0.1:27017')
     db = client.logs
     nginx = db.nginx
